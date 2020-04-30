@@ -1,0 +1,13 @@
+%table.table.table-bordered.table-sm.table-striped
+  %thead.bg-white
+    %tr
+      %th Name
+      %th Email
+      %th Actions
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.name
+        %td= user.email
+        %td
+          %a(href="#") editar
