@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_04_29_135852) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "acesso", force: :cascade do |t|
-    t.integer "user_id", limit: 10, null: false
+    t.integer "user_id", null: false
     t.integer "menu_opcao", null: false
     t.boolean "incluir", default: false
     t.boolean "excluir", default: false
