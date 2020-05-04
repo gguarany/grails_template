@@ -1,5 +1,5 @@
-@import "./bootstrap_custom.scss";
 
-body {
-  background-color: #f8f9fa !important;
-}
+@import '~bootstrap/scss/functions';
+@import './partials/theme';
+@import './bootstrap_custom';
+@import './partials/cards';
