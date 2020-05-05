@@ -1,22 +1,10 @@
-@import './theme';
+@import './variables';
 
 .card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  word-wrap: break-word;
-  background-color: $white;
-  background-clip: border-box;
-  border: 1px solid $border-default;
-  border-radius: .35rem;
-
   &.shadow {
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
-  }
-
-  .card-header {
-    background-color: $light;
-    border-bottom: 1px solid $border-default;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),
+                0 3px 1px -2px rgba(0,0,0,0.12),
+                0 1px 5px 0 rgba(0,0,0,0.2);
   }
 }
+
