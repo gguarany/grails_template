@@ -7,9 +7,9 @@ ActiveSupport::Notifications.subscribe 'routes_loaded.application' do
       header: 'Parâmetros do Sistema',
       items: [
         {
-          id: MENU_ACESSO[:usuarios],
+          id: MENU_ACESSO[:users],
           description: 'Usuários',
-          action: path.admin_users_path,
+          action: path.users_path,
           subject: 'Usuários',
           icon: 'user-friends',
           visible_menu: true
