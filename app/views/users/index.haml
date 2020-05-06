@@ -10,4 +10,4 @@
         %td= user.name
         %td= user.email
         %td
-          %a(href="#") editar
+          = link_to 'editar', user_path(user)

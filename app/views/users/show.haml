@@ -1,0 +1,17 @@
+.jumbotron.col-md-6.mx-auto
+  = form_for @user do |f|
+    %h2 Editar Usuário
+    .form-group
+      = f.text_field :name, {class: 'form-control'}
+    .form-group
+      = f.text_field :email, {class: 'form-control'}
+    .form-group
+      = f.submit 'Salvar', {class: 'btn btn-success'}
+
+    - if current_user.admin?
+      .form-group
+        = f.label :admin
+        = f.select :admin, options_for_select([["Sim", "true"], ["Não", "false"]], { selected: @user.admin? ? "true" : "false"}), {prompt: "Selecione..."}, {class: "form-control"}
+
+      %h2.form-head-title Acesso Avançado
+      = render 'access_control', accesses: @accesses, count: 0, permitions: true

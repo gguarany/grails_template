@@ -1,0 +1,54 @@
+- accesses.each do |session|
+  .mt-3
+    = label_tag "session[#{count}]", session[:description]
+  .row.p-3
+    - session[:items].each do |block|
+      - block.each do |header, items|
+        .col-md-12.mb-3
+          .row
+            %p.bg-head-form
+              = header
+
+          .row.mb-2
+            - items.each do |item|
+              .col-md-4.py-1.form-block-light
+                .row.mb-3
+                  %p.col-12.text-bold.text-80.h-100.mt-3= item[:description]
+
+                  %table.table.table-sm.mt-2.mx-1.border.table-bordered
+                    %thead.thead-light
+                      %tr
+                        %th.text-center.text-w-normal Geral
+                        %th.text-center.text-w-normal Adicionar
+                        %th.text-center.text-w-normal Editar
+                        %th.text-center.text-w-normal Excluir
+                    %tbody
+                      %tr
+                        %td
+                          .check-switch.justify-content-center.pt-2
+                            .check-switcher
+                              = check_box_tag "access[#{count}][id]", item[:id], @user.user_accesses.map(&:menu_opcao).include?(item[:id]), class: 'switch', onclick: "setPermition(#{count})", checked: item[:id] == 4 ? true : false
+                              %label{class: 'label-switch success', for: "access_#{count}_id"}
+
+                        - if permitions
+                          :ruby
+                            permition = @user.user_accesses.select{|a| a.menu_opcao == item[:id] }.first
+
+                          %td
+                            .check-switch.justify-content-center.pt-2
+                              .check-switcher
+                                = check_box_tag "access[#{count}][incluir]", true, permition.present? ? permition.incluir : false, class: 'switch', onclick: "setPartialPermition(#{count}, 'incluir')"
+                                %label{class: 'label-switch primary', for: "access_#{count}_incluir"}
+                          %td
+                            .check-switch.justify-content-center.pt-2
+                              .check-switcher
+                                = check_box_tag "access[#{count}][alterar]", true, permition.present? ? permition.alterar : false, class: 'switch', onclick: "setPartialPermition(#{count}, 'alterar')"
+                                %label{class: 'label-switch primary', for: "access_#{count}_alterar"}
+                          %td
+                            .check-switch.justify-content-center.pt-2
+                              .check-switcher
+                                = check_box_tag "access[#{count}][excluir]", true, permition.present? ? permition.excluir : false, class: 'switch', onclick: "setPartialPermition(#{count}, 'excluir')"
+                                %label{class: 'label-switch primary', for: "access_#{count}_excluir"}
+
+              :ruby 
+                count += 1

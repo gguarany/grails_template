@@ -7,7 +7,7 @@ ActiveSupport::Notifications.subscribe 'routes_loaded.application' do
       header: 'Parâmetros do Sistema',
       items: [
         {
-          id: MENU_ACESSO[:users],
+          id: MENU_ACESSO[:usuarios],
           description: 'Usuários',
           action: path.users_path,
           subject: 'Usuários',
