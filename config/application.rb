@@ -12,7 +12,7 @@ module Gkgnews
     config.load_defaults 6.0
 
     config.i18n.default_locale = :"pt-BR"
-    config.time_zone = 'America/Belem'
+    config.time_zone = 'America/Sao_Paulo'
     config.active_record.default_timezone = :local
     config.active_record.time_zone_aware_attributes = false
 

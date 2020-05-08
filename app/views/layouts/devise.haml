@@ -2,10 +2,12 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Gkgnews
+    %title Gkg News
+    
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    
+    = stylesheet_pack_tag 'application', media: 'all'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     .container-fluid.h-100
@@ -13,4 +15,6 @@
         = render 'shared/alerts'
       
       = yield
+
+    = javascript_pack_tag 'lazy_loader'
       

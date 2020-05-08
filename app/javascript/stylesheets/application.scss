@@ -1,4 +1,54 @@
 
 @import './bootstrap_custom';
 @import './partials/cards';
-@import './partials/bgs';
+@import './partials/animations';
+@import './partials/notification';
+
+.feather {
+  width: $font-size-base;
+  height: $font-size-base;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  margin-top: -4px;
+  
+  &.fe-ignore-size {
+    width: unset;
+    height: unset;
+  }
+}
+
+.form-head-title {
+  font-weight: 400;
+  color: $primary;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  font-size: 1.32rem;
+  line-height: 36px;
+  border-bottom: 1px solid $gray-200;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// tables
+.table-bordered th, .table-bordered td, .table thead th {
+  border: 1px solid $gray-300;
+}
+.table {
+  &.table-index td {
+    &:last-child {
+      width: 170px;
+    }
+  }
+}
+
+// Grid
+.scroll-x {
+  overflow-x: auto;
+}
+
