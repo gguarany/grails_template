@@ -1,13 +1,15 @@
+= title 'Usuários'
+
 %table.table.table-bordered.table-sm.table-striped
-  %thead.bg-white
+  %thead
     %tr
       %th Name
       %th Email
-      %th Actions
+      %th.text-center Actions
   %tbody
     - @users.each do |user|
       %tr
         %td= user.name
         %td= user.email
-        %td
+        %td.text-center
           = link_to 'editar', user_path(user)

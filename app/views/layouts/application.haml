@@ -21,6 +21,13 @@
           = "#{yield(:title)}"
 
 
-      = yield
+      - if content_for?(:hide_default_layout)
+        .container-fluid
+          = yield
+      
+      - else
+        .card.card_content
+          .card-body
+            = yield
 
     = javascript_pack_tag 'lazy_loader'
