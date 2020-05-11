@@ -1,6 +1,4 @@
-= form_for @user do |f|
-  %h2 Editar Usuário
-
+= form_for @user, url: users_admin_index_path do |f|
   .row
     .form-group.col-md-4
       = f.label :name
@@ -17,8 +15,7 @@
     .form-group.col-md-2
       = f.submit 'Salvar', {class: 'btn btn-success btn-block'}
 
-
   .row
-    %h2.form-head-title Acesso Avançado
+    %h2.form-head-title.ml-3 Acesso Avançado
     .col-12
       = render 'access_control', accesses: @accesses, count: 0, permitions: true

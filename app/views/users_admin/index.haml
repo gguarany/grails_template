@@ -1,5 +1,8 @@
 = title 'Usuários'
 
+= link_to 'Novo', new_users_admin_path, {class: 'btn btn-primary float-right mb-2'}
+
+
 %table.table.table-bordered.table-sm.table-striped
   %thead
     %tr
@@ -12,4 +15,4 @@
         %td= user.name
         %td= user.email
         %td.text-center
-          = link_to 'editar', user_path(user)
+          = link_to 'editar', edit_users_admin_path(user)

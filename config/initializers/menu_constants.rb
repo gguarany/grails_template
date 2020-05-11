@@ -9,7 +9,7 @@ ActiveSupport::Notifications.subscribe 'routes_loaded.application' do
         {
           id: MENU_ACESSO[:usuarios],
           description: 'Usuários',
-          action: path.users_path,
+          action: path.users_admin_index_path,
           subject: 'Usuários',
           icon: 'user-friends',
           visible_menu: true
