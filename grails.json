@@ -24,7 +24,9 @@
     "sqlserver": {
       "name": "activerecord-sqlserver-adapter",
       "version": "~> 5.1",
-      "extra_gems": ["tiny_tds"]
+      "extra_gems": [
+        "'tiny_tds', '~> 2.1.2'"
+      ]
     },
     "mysql": {
       "name": "mysql2",
