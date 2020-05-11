@@ -16,3 +16,4 @@
         %td= user.email
         %td.text-center
           = link_to 'editar', edit_users_admin_path(user)
+          = link_to 'remover', users_admin_path(user), method: :delete, class: 'ml-3 text-danger', data: {confirm: "Você tem certeza que deseja remover o Usuário?"}

@@ -2,7 +2,7 @@ class UsersAdminController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_user!
   before_action :set_collections, only: [:edit, :update, :new]
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :destroy]
   before_action :format_params, only: [:update, :create]
 
   ACCESS_ID = MENU_ACESSO[:usuarios]
@@ -32,7 +32,8 @@ class UsersAdminController < ApplicationController
   end
 
   def create
-    @user = User.new user_params.merge({ password: '123456' })
+    @user = User.new user_params
+    return redirect_to request.referer, alert: 'Senhas não conferem!' if params[:user][:password] != params[:user][:password_confirmation]
     
     if @user.save
       UserAccess.create_to_user(@user, access_params) if access_params.present?
@@ -41,6 +42,11 @@ class UsersAdminController < ApplicationController
     end
 
     render :new, collection: set_collections
+  end
+
+  def destroy
+    return redirect_to users_admin_index_path, notice: 'Usuário registrado com sucesso!' if @user.destroy
+    render :index
   end
 
   private
@@ -61,7 +67,8 @@ class UsersAdminController < ApplicationController
     params.require(:user).permit(
       :email,
       :name,
-      :admin
+      :admin,
+      :password,
     )
   end
 
