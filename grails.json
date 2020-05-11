@@ -1,0 +1,18 @@
+{
+  "variaveis_views": [
+    "app/views/layouts/devise.haml",
+    "app/views/layouts/application.haml",
+    "app/views/shared/_navigation.haml"
+  ],
+  "variaveis_nome_projeto": [
+    "package.json",
+    "config/cable.yml"
+  ],
+  "variaveis_nome_database": [
+    "config/database.yml",
+    "config/environments/production.rb"
+  ],
+  "variaveis_constantize": [
+    "config/application.rb"
+  ]
+}
