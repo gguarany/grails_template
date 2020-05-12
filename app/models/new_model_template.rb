@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class NewModelTemplate
-  # belongs_to relations
+  # belongs_to
 
-  # has_one relations
+  # has_one
 
-  # has_many relations
+  # has_many
 
   # validations
 
