@@ -1,7 +1,7 @@
 .col-12
-  = render partial: 'shared/errors_form', locals: { model: @resource }
+  = render partial: 'shared/errors_form', locals: { model: @$resource }
 
-= simple_form_for @resource do |f|
+= simple_form_for @$resource do |f|
   .row
     .col-12
       %h3.form-head-title Geral
@@ -13,5 +13,5 @@
     .col-md-2
       %button.btn.btn-success.btn-block{type: 'submit'}
         = icon('save')
-        Salvar ResourceTitle
+        Salvar $resource_title
     

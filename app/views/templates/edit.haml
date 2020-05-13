@@ -1,11 +1,11 @@
-= title 'Editar ResourceTitle'
+= title 'Editar $resource_title'
 
 .row
   .col-12
     .card.card-body.shadow
       .col-12.text-right
-        = link_to resorce_path(@resorce), method: :delete, class: 'btn btn-danger' do
+        = link_to $resource_path(@$resource), method: :delete, class: 'btn btn-danger' do
           = icon('trash')
-          Excluir ResourceTitle
+          Excluir $resource_title
 
       = render 'form'
