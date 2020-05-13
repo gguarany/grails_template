@@ -17,7 +17,7 @@ class ModelTemplatesController < ApplicationController
   def update
     if @resource.update(resource_params)
       flash[:notice] = 'Atualizado com sucesso!'
-      return redirect_to edit_resource_path(@resource)
+      return redirect_to resources_path
     end
 
     render :edit
@@ -28,7 +28,7 @@ class ModelTemplatesController < ApplicationController
 
     if @resource.save
       flash[:notice] = 'Criado com sucesso!'
-      return redirect_to resource_tabelas_path(@resource)
+      return redirect_to edit_resource_path(@resource)
     end
 
     render :new
@@ -37,17 +37,17 @@ class ModelTemplatesController < ApplicationController
   def destroy
     if @resource.destroy
       flash[:notice] = 'Removido com sucesso!'
-      return redirect_to root_path
+      return redirect_to resources_path
     end
 
-    flash[:alert] = 'Não foi possível remover resource'
+    flash[:alert] = 'Não foi possível remover!'
     redirect_to edit_resource_path(@resource)
   end
 
   private
 
   def find_resource
-    @resource = current_user.resources.find(params[:id])
+    @resource = ModelTemplate.find(params[:id])
   end
 
   def resource_params
