@@ -4,6 +4,8 @@ class ModelTemplatesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_resource, except: %i[index new create]
 
+  ACCESS_ID = MENU_ACESSO[:resources]
+
   def index
     @resources = ModelTemplate.all
   end

@@ -1,0 +1,11 @@
+= title 'Editar ResourceTitle'
+
+.row
+  .col-12
+    .card.card-body.shadow
+      .col-12.text-right
+        = link_to resorce_path(@resorce), method: :delete, class: 'btn btn-danger' do
+          = icon('trash')
+          Excluir ResourceTitle
+
+      = render 'form'
