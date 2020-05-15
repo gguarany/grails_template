@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class NewModelTemplate
+class NewModelTemplate < ApplicationRecord
   # belongs_to
 
   # has_one
