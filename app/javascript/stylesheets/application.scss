@@ -52,3 +52,14 @@
   overflow-x: auto;
 }
 
+// Buttons
+.btn-default {
+  background-color: $white;
+  border: 1px solid $gray-300;
+  box-shadow: none;
+  color: $gray-800;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

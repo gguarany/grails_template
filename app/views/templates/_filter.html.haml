@@ -1,0 +1,15 @@
+.dropdown
+  %button#dropdownFilter.btn.btn-default.dropdown-toggle{'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown', type: 'button'}
+    = icon('sliders')
+    Filtrar
+
+  .dropdown-menu{'aria-labelledby': 'dropdownFilter'}
+    = search_form_for @q, url: $resource_path, html: { class: 'px-4 py-3'} do |f|
+      
+
+      = f.submit class: 'btn btn-primary btn-block', value: 'Filtrar'
+
+      - if params[:q].present?
+        = link_to request.path, class:'btn btn-default btn-block' do
+          = icon('x')
+          Limpar Filtros
