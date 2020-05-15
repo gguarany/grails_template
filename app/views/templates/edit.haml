@@ -1,11 +1,10 @@
 = title 'Editar $resource_singular_title'
 
 .row
+  .col-12.text-right
+    = link_to $resource_path(@$resource), method: :delete, class: 'btn btn-danger' do
+      = icon('trash')
+      Excluir $resource_singular_title
+  
   .col-12
-    .card.card-body.shadow
-      .col-12.text-right
-        = link_to $resource_path(@$resource), method: :delete, class: 'btn btn-danger' do
-          = icon('trash')
-          Excluir $resource_singular_title
-
-      = render 'form'
+    = render 'form'
