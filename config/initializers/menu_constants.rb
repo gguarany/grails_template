@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 ActiveSupport::Notifications.subscribe 'routes_loaded.application' do
   path = Rails.application.routes.url_helpers
@@ -10,10 +11,8 @@ ActiveSupport::Notifications.subscribe 'routes_loaded.application' do
           id: MENU_ACESSO[:usuarios],
           description: 'Usuários',
           action: path.users_admin_index_path,
-          subject: 'Usuários',
-          icon: 'user-friends',
           visible_menu: true
-        },
+        }
       ]
     }
   ].freeze
@@ -24,6 +23,6 @@ ActiveSupport::Notifications.subscribe 'routes_loaded.application' do
       description: 'Cadastros',
       icon: 'archive',
       sessions: [CADASTRO_BLOCK_ONE]
-    },
+    }
   ].freeze
 end
