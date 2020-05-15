@@ -1,7 +1,9 @@
 = title '$resource_title'
 
-.col-md-12.text-right
-  = link_to 'Novo', new_$resources_admin_path, {class: 'btn btn-primary mb-2'}
+.row.justify-content-between.mb-3
+  = render 'filter'
+  .col-md-2
+    = link_to 'Novo', new_$resources_admin_path, {class: 'btn btn-primary btn-block'}
 
 %table.table.table-bordered.table-sm.table-striped
   %thead
