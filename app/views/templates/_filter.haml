@@ -4,7 +4,7 @@
     Filtrar
 
   .dropdown-menu{'aria-labelledby': 'dropdownFilter'}
-    = search_form_for @q, url: $resource_path, html: { class: 'px-4 py-3'} do |f|
+    = search_form_for @q, url: $resources_path, html: { class: 'px-4 py-3'} do |f|
       $search_fields
 
       = f.submit class: 'btn btn-primary btn-block', value: 'Filtrar'
