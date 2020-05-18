@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   include Pundit
 
@@ -8,7 +10,9 @@ class ApplicationController < ActionController::Base
       @permition ||= Permition.new(current_user, self.class::ACCESS_ID)
 
       if %w[new create update destroy destroy_attachment].include?(params[:action])
-        redirect_to (request.referer || root_path), alert: 'Você não tem autorização!' unless @permition.can?(params[:action])
+        unless @permition.can?(params[:action])
+          redirect_to (request.referer || root_path), alert: 'Você não tem autorização!'
+        end
       end
     end
   end

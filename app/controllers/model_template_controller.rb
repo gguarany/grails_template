@@ -7,7 +7,10 @@ class ModelTemplatesController < ApplicationController
   ACCESS_ID = MENU_ACESSO[:resources]
 
   def index
-    @resources = ModelTemplate.all
+    query = ModelTemplateQueries.new(params)
+
+    @resources = query.to_relation
+    @q = query.q
   end
 
   def new
