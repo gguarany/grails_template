@@ -3,7 +3,7 @@
 module UserMenu
   def user_menu_items
     user_items = []
-    user_items = user_accesses.pluck(:ace_men_opcao).uniq if user_accesses.present?
+    user_items = user_accesses.pluck(:menu_opcao).uniq if user_accesses.present?
 
     user_items
   end

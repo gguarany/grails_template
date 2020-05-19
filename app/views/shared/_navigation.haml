@@ -4,13 +4,17 @@
     %span.navbar-toggler-icon
   #mainNav.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
-      %li.nav-item.dropdown
-        %a#navbarDropdown.nav-link.dropdown-toggle{'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown', href: '#', role: 'button'}
-          Cadastros
-        .dropdown-menu{'aria-labelledby': 'navbarDropdown'}
-          = link_to 'Users', users_admin_index_path, {class: 'dropdown-item'} 
-          .dropdown-divider
-          %a.dropdown-item{href: '#'} Something else here
+      - current_user.menu_navigation.each do |menu_item|
+        %li.nav-item.dropdown
+          %a#navbarDropdown.nav-link.dropdown-toggle{'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown', href: '#', role: 'button'}
+            = menu_item[:description]
+
+          .dropdown-menu{'aria-labelledby': 'navbarDropdown'}
+            - menu_item[:sessions].each do |block|
+              - block.each do |session|
+                - session[:items].each do |item|
+                  = link_to item[:description], item[:action], {class: 'dropdown-item'} 
+
     .form-inline.my-2.my-lg-0
       - if user_signed_in?
         = link_to 'Logout', destroy_user_session_path, method: :delete
