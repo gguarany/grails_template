@@ -7,9 +7,9 @@ ruby '2.5.1'
 gem "pundit"
 
 gem 'haml'
-# gem 'bootstrap', '~> 4.4.1'
+gem 'bootstrap', '~> 4.4.1'
 gem 'font-awesome-sass', '~> 5.12.0'
-# gem 'jquery-rails'
+gem 'jquery-rails'
 
 gem 'devise'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

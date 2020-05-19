@@ -1,3 +1,51 @@
 @charset "utf-8";
 
 @import './partials/icons';
+@import './partials/bootstrap_custom';
+@import './partials/cards';
+@import './partials/animations';
+@import './partials/notification';
+
+.form-head-title {
+  font-weight: 400;
+  color: $primary;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  font-size: 1.32rem;
+  line-height: 36px;
+  border-bottom: 1px solid $gray-200;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// tables
+.table-bordered th, .table-bordered td, .table thead th {
+  border: 1px solid $gray-300;
+}
+.table {
+  &.table-index td {
+    &:last-child {
+      width: 170px;
+    }
+  }
+}
+
+// Grid
+.scroll-x {
+  overflow-x: auto;
+}
+
+// Buttons
+.btn-default {
+  background-color: $white;
+  border: 1px solid $gray-300;
+  box-shadow: none;
+  color: $gray-800;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

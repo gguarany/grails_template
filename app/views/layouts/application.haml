@@ -3,10 +3,13 @@
   %head
     %meta{content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type'}/
     
-    %title= content_for?(:title) ? "#{yield(:title)} - GrailsTemplate" : "GrailsTemplate"
+    %title= content_for?(:title) ? "#{yield(:title)} - GrailsTemplate" : 'GrailsTemplate'
 
     = csrf_meta_tags
     = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     
     = stylesheet_pack_tag 'application', media: 'all'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
@@ -22,12 +25,11 @@
 
 
       - if content_for?(:hide_default_layout)
-        .container-fluid
-          = yield
+        .row
+          .col-12
+            = yield
       
       - else
-        .card.card_content
-          .card-body
+        .row
+          .col-12.card.card_content.py-3
             = yield
-
-    = javascript_pack_tag 'lazy_loader'
