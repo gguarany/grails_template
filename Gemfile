@@ -17,7 +17,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Active Record Adapter
 gem 'pg'
 
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'sass-rails', '>= 6'
 gem 'uglifier', '>= 1.3.0'
 
