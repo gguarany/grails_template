@@ -29,7 +29,7 @@ class ModelTemplatesController < ApplicationController
   end
 
   def create
-    @resource = current_user.resources.new(resource_params)
+    @resource = ModelTemplate.new(resource_params)
 
     if @resource.save
       flash[:notice] = 'Criado com sucesso!'
