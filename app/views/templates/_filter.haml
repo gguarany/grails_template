@@ -1,6 +1,6 @@
 .dropdown.col-md-2
   %button#dropdownFilter.btn.btn-default.dropdown-toggle{'aria-expanded': 'false', 'aria-haspopup': 'true', 'data-toggle': 'dropdown', type: 'button'}
-    = icon('sliders')
+    = icon('fas', 'sliders-h')
     Filtrar
 
   .dropdown-menu{'aria-labelledby': 'dropdownFilter'}
@@ -11,5 +11,5 @@
 
       - if params[:q].present?
         = link_to request.path, class:'btn btn-default btn-block' do
-          = icon('x')
+          = icon('fas', 'times')
           Limpar Filtros

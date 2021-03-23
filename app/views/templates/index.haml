@@ -16,6 +16,6 @@
         %td $fields
         %td.text-center
           = link_to edit_$resource_path($resource), title: 'Editar', class: 'btn btn-sm btn-warning mx-1' do
-            = icon('edit')
+            = icon('far', 'edit')
           = link_to $resource_path($resource), title: 'Excluir', method: :delete, data: {confirm: 'Confirma a remoção do item?'}, class: 'btn btn-sm btn-danger mx-1' do
-            = icon('trash')
+            = icon('far', 'trash-alt')
