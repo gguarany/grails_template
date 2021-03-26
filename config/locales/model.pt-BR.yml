@@ -2,6 +2,11 @@
   boleanos:
     'true': 'Sim'
     'false': 'Não'
+  log_fields: &log_fields
+    created_at: Data criação
+    updated_at: Data Atualização
+    created_by: Criado por
+    updated_by: Atualizado por
   activerecord:
     errors:
       models: &models
